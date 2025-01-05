@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult } = require('express-validator');
-const Subscriber = require('./models/Subscriber');
-const { sendWelcomeEmail } = require('./utils/emailConfig');
+const Subscriber = require('../models/subscriber');
+const { sendWelcomeEmail } = require('../utils/emailconfig');
 
 router.post('/subscribe', [check('email').isEmail()], async (req, res) => {
     try {
